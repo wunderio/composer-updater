@@ -1,0 +1,13 @@
+{
+  "name": "wunderio/composer-updater",
+  "description": "Makes updating composer dependencies a bit easier",
+  "homepage": "https://github.com/wunderio/composer-updater",
+  "authors": [
+    {
+      "name": "Juhani Christian Moilanen",
+      "email": "juhani.moilanen@wunder.io",
+      "role": "Owner"
+    }
+  ],
+  "license": "MIT"
+}

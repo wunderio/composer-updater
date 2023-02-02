@@ -1,4 +1,3 @@
-# composer_updater
+# composer-updater
 Makes updating composer dependencies a bit easier
 
-## This is still a WIP
