@@ -12,6 +12,7 @@ function getConfigChanges() {
 
 /**
  * Adds composer.lock and the given config files with `git add`
+ *
  * @param array $config_changes
  *
  * @return void
@@ -43,6 +44,7 @@ foreach ($updatesArray as $update) {
 }
 
 $answer = readline("\nDo you want to update these packages? [Y/n] ");
+$yolo = strtolower(readline('Yolo ? [y/N]')) === 'y';
 
 if (strtolower($answer) === 'n') {
   echo "exiting";
@@ -53,11 +55,11 @@ foreach ($updatesArray as $update) {
     continue;
   }
 
-  $composer_data = explode(" ", preg_replace('/\s+/', ' ',$update));
+  $composer_data = explode(" ", preg_replace('/\s+/', ' ', $update));
   // Evil syntax :D
   [$package, $current, , $available] = $composer_data;
   // ToDO this does not work for all version
-  $change_log = "https://www.drupal.org/project/".explode('/', $package)[1]."/releases/" . $current;
+  $change_log = "https://www.drupal.org/project/" . explode('/', $package)[1] . "/releases/" . $current;
 
   echo "Going to update " . $package . " from: " . $current . " to: " . $available . "\n";
   echo "Check for changes here: ";
